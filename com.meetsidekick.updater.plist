@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.meetsidekick.updater</string>
+    <key>ServiceDescription</key>
+    <string>Sidekick Updater</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/sidekick/code/updater/update.sh</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/sidekick/code/updater/</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/sidekick/code/updater/logfile.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/sidekick/code/updater/logfile.err.log</string>
+</dict>
+</plist>
