@@ -9,17 +9,25 @@
     <string>Sidekick Updater</string>
     <key>ProgramArguments</key>
     <array>
+        <string>/bin/bash</string>
         <string>/Users/sidekick/code/updater/update.sh</string>
     </array>
     <key>WorkingDirectory</key>
     <string>/Users/sidekick/code/updater/</string>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
     <key>KeepAlive</key>
-    <true/>
+    <false/>
     <key>RunAtLoad</key>
-    <true/>
+    <false/>
     <key>StandardOutPath</key>
     <string>/Users/sidekick/code/updater/logfile.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/sidekick/code/updater/logfile.err.log</string>
+    <string>/Users/sidekick/code/updater/logfile.log</string>
 </dict>
 </plist>

@@ -9,9 +9,19 @@ if test -f "$SIDEKICK_DMG"; then
   rm $SIDEKICK_DMG
 fi
 
-wget -q -O $SIDEKICK_DMG $SIDEKICK_DMG_URL
+/usr/local/bin/wget -q -O $SIDEKICK_DMG $SIDEKICK_DMG_URL
 
-hdiutil attach $SIDEKICK_DMG
+if [[ ! -f "$SIDEKICK_DMG" ]] ; then
+    echo "Error: download failed."
+    exit
+fi
+
+/usr/bin/hdiutil attach $SIDEKICK_DMG
+
+if [ ! -d "/Volumes/Sidekick/Sidekick.app" ]; then
+  echo "Error: mounting browser image"
+  exit
+fi
 
 if [ -d "$TARGET_DIR" ]; then
   echo "Removing old version: $TARGET_DIR"
@@ -21,7 +31,7 @@ fi
 echo "Installing new version: $TARGET_DIR"
 cp -R /Volumes/Sidekick/Sidekick.app $TARGET_DIR
 
-hdiutil detach /Volumes/Sidekick
+/usr/bin/hdiutil detach /Volumes/Sidekick
 
 rm $SIDEKICK_DMG
 echo "  done."
